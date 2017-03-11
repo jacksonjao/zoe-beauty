@@ -31,6 +31,7 @@ var products =
 {name:"Beached Bronzer", description:"Dust this silky powder onto your face or all over your body for a beachy, sunkissed look.", type:"face", brand:"Urban Decay", price:28.00, rate:3.8, soldItems:488, img:"bronzer.jpg"},
 {name:"Glow Kit", description:"Bring instant luminosity to the complexion with these four metallic powder highlighters.", type:"face", brand:"Anastasia", price:40.00, rate:5.0, soldItems:237, img:"highlighter.jpg"}
 ];
+ var saludo = "hola";
 
 exports.getAll=function () {
     return products;
