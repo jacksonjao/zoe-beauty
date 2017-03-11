@@ -1,4 +1,4 @@
-var product =
+var products =
 [
 {name:"Tartelette Eyeshadow Palette", description:"Use your favorite shadow brush to create your own custom blended bold eye or more subtle looks for any occasion.", type:"eyes", brand:"tarte", price:46.00, rate:4.9, soldItems:429, img:"palette2.jpg"},
 {name:"Naked Palette", description:" From the palest champagne to the grittiest gunmetal, it’s everything you need to let eyes go laid-back, beachy vibe, or black-tie drama.", type:"eyes", brand:"Urban Decay", price:54.00, rate:4.7, soldItems:500, img:"palette.jpg"},
@@ -32,4 +32,99 @@ var product =
 {name:"Glow Kit", description:"Bring instant luminosity to the complexion with these four metallic powder highlighters.", type:"face", brand:"Anastasia", price:40.00, rate:5.0, soldItems:237, img:"highlighter.jpg"}
 ];
 
+exports.getAll=function () {
+    return products;
+};
 
+exports.getByType= function (type) {
+    var filtered= [];
+    for (i = 0; i < products.length; i++) {
+        if(products[i].type === type){
+filtered.push(products[i]);
+        }
+    }
+return filtered;
+
+/*    return products.filter(function(element){
+        return element.type === type;
+    });*/
+
+};
+
+exports.getByBrand= function (brand) {
+    var filtered= [];
+    for (i = 0; i < products.length; i++) {
+        if(products[i].brand === brand){
+            filtered.push(products[i]);
+        }
+    }
+    return filtered;
+};
+
+exports.getByPrice= function (price) {
+    var filtered= [];
+    for (i = 0; i < products.length; i++) {
+        if (price==20){
+            if(products[i].price < 20){
+                filtered.push(products[i]);
+            }
+        }
+        if (price==21){
+            if(products[i].price > 20 && products.price < 40){
+                filtered.push(products[i]);
+            }
+        }
+        if (price==40){
+            if(products[i].price > 40){
+                filtered.push(products[i]);
+            }
+        }
+    }
+    return filtered;
+};
+
+exports.getByRate= function (rate) {
+    var filtered= [];
+    for (i = 0; i < products.length; i++) {
+        if (rate=="over"){
+            if(products[i].rate > 4.0){
+                filtered.push(products[i]);
+            }
+        }
+        if (rate=="under"){
+            if(products[i].rate < 4.0){
+                filtered.push(products[i]);
+            }
+        }
+        }
+    return filtered;
+    };
+
+exports.getBySold= function (items) {
+    var filtered= [];
+    for (i = 0; i < products.length; i++) {
+        if (items==100){
+            if(products[i].soldItems > 100){
+                filtered.push(products[i]);
+            }
+        }
+        if (items==200){
+            if(products[i].soldItems > 200){
+                filtered.push(products[i]);
+            }
+        }
+        if (items==300){
+            if(products[i].soldItems > 300){
+                filtered.push(products[i]);
+            }
+        }
+        if (items==400){
+            if(products[i].soldItems > 400){
+                filtered.push(products[i]);
+            }
+        }
+    }
+    return filtered;
+
+
+};
