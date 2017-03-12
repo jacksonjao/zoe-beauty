@@ -15,7 +15,14 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 .col-11{width: 91.40%; }
 .col-12{width: 100%; }
 .col-divi-5{width: 19%; }
-
+.visible{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+background-color: black;
+  opacity: 0.8;
+  z-index: 18;
+}
 .menu{
   display: table;
 
@@ -29,6 +36,8 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   -moz-box-shadow: inset 0px 0px 0px 8px rgba(199,161,84,1);
   box-shadow: inset 0px 0px 0px 8px rgba(199,161,84,1);
 }
+
+
 p{
   font-family: 'Roboto', sans-serif;
   color: white;
@@ -71,10 +80,6 @@ h1{
   text-align: center;
 }
 
-h1,h2,h3,h4,h5,p{
-
-}
-
 h2{
   font-family: 'Roboto', sans-serif;
   color: white;
@@ -92,7 +97,7 @@ h2{
 }
 
 .type{
-  margin-top: 10vh;
+  margin-top: 5vh;
   -webkit-clip-path: circle(40% at center);
   filter:grayscale(100%);
   opacity: 0.15;
@@ -102,7 +107,7 @@ h2{
 }
 .type:hover{
 
-  margin-top: 10vh;
+
   -webkit-clip-path: circle(50% at center);
   filter:grayscale(0%);
   opacity: 1;
@@ -185,6 +190,47 @@ background: none;
   margin: 35px 0 0 35px;
 
 }
+
+.details-product{
+  transform: translateY(20vh);
+  text-align: center;
+margin-left:16.43% ;
+
+}
+
+.description{
+  color: black;
+  font-size: 16pt;
+  text-align: left;
+
+}
+.detail-image{
+  float: left;
+}
+.detail-image>img{
+  border: 10px solid;
+  border-style: inset;
+  border-image: linear-gradient(to bottom, #533a1f 0%, #ba8a4d 100%);
+  border-image-slice: 1;
+}
+.name-product{
+float: left;
+  margin-left: 40px;
+
+}
+.name-product>div{
+
+}
+.name-product>div>h1{
+  font-size: 30pt;
+}
+.precio{
+  text-align: right;
+}
+.buy{
+  text-align: left;
+}
+
 /* Responsive design */
 
 
@@ -203,14 +249,18 @@ background: none;
   .col-12{width:100%; }
   .col-divi-5{width: 49%; }
 
+header{
+  text-align: center;
+}
   .logo{
     margin-top: 10vh;
     text-align: center;
-    width: 70%;
+    width:60%;
     margin: 10px;
   }
   header>.logo{
-width: 80%;
+width: 100%;
+    text-align: center;
   }
   .lista-productos{
     margin-left: 0;
@@ -226,13 +276,16 @@ width: 80%;
   }
   .fondoIndex{
     height: 100vh;
+    text-align: center;
+    position: fixed;
   }
   header>.logo{
     padding: 5vh 0 5vh 0;
+    text-align: center;
   }
   .type{
     width: 70%;
-    margin-top: 10vh;
+    margin-top: 5vh;
     -webkit-clip-path: circle(50% at center);
     filter:grayscale(0%);
     opacity: 1;

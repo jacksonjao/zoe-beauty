@@ -51,6 +51,7 @@ filtered.push(products[i]);
 
         }
     }
+
 return filtered;
 
 /*    return products.filter(function(element){
@@ -64,6 +65,16 @@ exports.getByBrand= function (brand) {
     for (i = 0; i < products.length; i++) {
         if(products[i].brand === brand){
             filtered.push(products[i]);
+        }
+    }
+    return filtered;
+};
+
+exports.getByName= function (name) {
+    var filtered;
+    for (i = 0; i < products.length; i++) {
+        if(products[i].name === name){
+            filtered=products[i];
         }
     }
     return filtered;
@@ -140,7 +151,7 @@ exports.getBySold= function (items) {
 exports.getImg= function(filtered){
     var rutas= [];
     for(i = 0; i < filtered.length; i++){
-        rutas.push('/images/products/'+filtered[i].type+'/'+filtered[i].img);
+        rutas.push({dir:'/images/products/'+filtered[i].type+'/'+filtered[i].img,name:""+filtered[i].name});
     }
     return rutas;
 };
