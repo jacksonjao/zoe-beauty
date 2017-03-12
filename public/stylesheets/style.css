@@ -2,21 +2,19 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* General */
 
 /* Grid */
-.col-1{ width:8.333%; }
-.col-2{ width:16.666%; }
-.col-3{ width:25%; }
-.col-4{ width:33.333%; }
-.col-5{ width:41.666%; }
-.col-6{ width:50%; }
-.col-7{ width:58.333%; }
-.col-8{ width:66.666%; }
-.col-9{ width:75%; }
-.col-10{ width:83.333%; }
-.col-11{width: 91.666%; }
+.col-1{ width:8.1%; }
+.col-2{ width:16.43%; }
+.col-3{ width:24.80%; }
+.col-4{ width:33.1%; }
+.col-5{ width:41.43%; }
+.col-6{ width:49.80%;}
+.col-7{ width:58.1%; }
+.col-8{ width:66.43%; }
+.col-9{ width:74.80%; }
+.col-10{ width:83.1%; }
+.col-11{width: 91.40%; }
 .col-12{width: 100%; }
-
-
-/* Otros */
+.col-divi-5{width: 19%; }
 body{
 
 
@@ -38,15 +36,17 @@ h2{
   font-family: 'Roboto', sans-serif;
 }
 
+/* index */
 .logo{
   margin-top: 15vh;
   text-align: center;
 }
-figure{
+
+.circulos{
   display: inline-block;
 }
-.type{
 
+.type{
   margin-top: 10vh;
   clip-path: circle(40% at center);
   filter:grayscale(100%);
@@ -63,13 +63,32 @@ figure{
   opacity: 1;
 
 }
+/* products */
 
+.display-productos{
+  display: inline-block;
+}
+
+.lista-productos{
+  margin-left: 8.1%;
+}
+
+.producto{
+  width: 80%;
+  margin: 10%;
+  border: 10px solid;
+
+}
+/*
+border-style: inset;
+border-image: linear-gradient(to bottom, #533a1f 0%, #ba8a4d 100%);
+border-image-slice: 1;*/
 /* Responsive design */
 
 
 @media only screen and (max-width: 769px){
-  .col-1{width: 33%; }
-  .col-2{width: 50%; }
+  .col-1{width: 32.85%; }
+  .col-2{width: 49%; }
   .col-3{ width:100%; }
   .col-4{width: 100%; }
   .col-5{width: 100%; }
@@ -80,12 +99,16 @@ figure{
   .col-10{width: 100%; }
   .col-11{width: 100%; }
   .col-12{width:100%; }
+  .col-divi-5{width: 49%; }
 
   .logo{
     margin-top: 10vh;
     text-align: center;
     width: 95%;
     margin: 10px;
+  }
+  .lista-productos{
+    margin-left: 0;
   }
 }
 

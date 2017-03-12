@@ -133,7 +133,7 @@ exports.getBySold= function (items) {
 exports.getImg= function(filtered){
     var rutas= [];
     for(i = 0; i < filtered.length; i++){
-        rutas.push("../public/images/products/"+filtered[i].type+"/"+filtered[i].img);
+        rutas.push("../images/products/"+filtered[i].type+"/"+filtered[i].img);
     }
     return rutas;
 };
