@@ -15,25 +15,70 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 .col-11{width: 91.40%; }
 .col-12{width: 100%; }
 .col-divi-5{width: 19%; }
-body{
 
+.menu{
+  display: table;
 
-  background: linear-gradient(to bottom, #222 0%,#000000 20%);
+  z-index: 19;
+  position: fixed;
+ left:-100%;
+  height: 100vh;
+  background-color: black;
+  text-align: center;
+  -webkit-box-shadow: inset 0px 0px 0px 8px rgba(199,161,84,1);
+  -moz-box-shadow: inset 0px 0px 0px 8px rgba(199,161,84,1);
+  box-shadow: inset 0px 0px 0px 8px rgba(199,161,84,1);
+}
+p{
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 13pt;
+
+  display: inline-block;
+  margin:10px;
+}
+p:hover{
+  color: #be9c6a;
+}
+a>h1:hover{
+  color: white;
+}
+.menu>ul{
+  display: table-cell;
+  vertical-align: middle;
+ /* top:50%;
+ transform: translateY(50%);*/
+  text-align: center;
+}
+a{
+  font-style: normal;
+  text-decoration: none;
+}
+.fondoIndex{
+  position: absolute;
+  height: 100vh;
+ background: linear-gradient(to bottom, #444 0%,#000000 20%);
   background-repeat: no-repeat;
   text-align: center;
   background-color: black;
+
 }
 
 h1{
   font-family: 'Cookie', cursive;
+  color: #ba8a4d;
+  font-size: 28pt;
+  text-align: center;
 }
 
 h1,h2,h3,h4,h5,p{
-  color: white;
+
 }
 
 h2{
   font-family: 'Roboto', sans-serif;
+  color: white;
+  text-align: center;
 }
 
 /* index */
@@ -48,17 +93,17 @@ h2{
 
 .type{
   margin-top: 10vh;
-  clip-path: circle(40% at center);
+  -webkit-clip-path: circle(40% at center);
   filter:grayscale(100%);
   opacity: 0.15;
-  transition: all 0.5s ;
+ transition: all 0.5s ;
 
 
 }
 .type:hover{
 
   margin-top: 10vh;
-  clip-path: circle(50% at center);
+  -webkit-clip-path: circle(50% at center);
   filter:grayscale(0%);
   opacity: 1;
 
@@ -67,22 +112,79 @@ h2{
 
 .display-productos{
   display: inline-block;
+  margin-left: 0px;
+
+
 }
 
 .lista-productos{
   margin-left: 8.1%;
+transform: translateY(15vh);
+z-index: 0;
+margin-bottom: 11vh;
 }
 
+header{
+  width: 100vw;
+  position: fixed;
+  margin:0;
+  background: linear-gradient(to bottom, #444 0%,#000000 50%);
+  background-repeat: no-repeat;
+  background-color: black;
+z-index: 10;
+}
+footer{
+  width: 100vw;
+  height: 10vh;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+
+  background: linear-gradient(to bottom, #444 0%,#000000 30%);
+ background-repeat: no-repeat;
+  background-color: black;
+  z-index: 9;
+}
+.texto-footer{
+opacity: 0.5;
+  text-align: center;
+  line-height: 450%;
+}
+header>.logo{
+  text-align: center;
+  margin: 0;
+ padding: 2vh 0 2vh 0;
+}
 .producto{
+opacity: 0.8;
+  filter:sepia(90%) brightness(70%) contrast(300%) hue-rotate(-8deg) grayscale(0%);
+
   width: 80%;
   margin: 10%;
   border: 10px solid;
+  border-style: inset;
+  border-image: linear-gradient(to bottom, #533a1f 0%, #ba8a4d 100%);
+  border-image-slice: 1;
+
+  transition: all 0.5s ;
+}
+ .producto:hover{
+   transform: translateY(-5px);
+opacity: 1;
+   filter:sepia(0%);
+ }
+.footer-index{
+background: none;
 
 }
-/*
-border-style: inset;
-border-image: linear-gradient(to bottom, #533a1f 0%, #ba8a4d 100%);
-border-image-slice: 1;*/
+.fa-bars, .fa-times{
+  color: #be9c6a;
+  z-index: 20;
+  position: fixed;
+  margin: 35px 35px 0 0;
+  margin: 35px 0 0 35px;
+
+}
 /* Responsive design */
 
 
@@ -104,11 +206,51 @@ border-image-slice: 1;*/
   .logo{
     margin-top: 10vh;
     text-align: center;
-    width: 95%;
+    width: 70%;
     margin: 10px;
+  }
+  header>.logo{
+width: 80%;
   }
   .lista-productos{
     margin-left: 0;
+    transform: translateY(28vh);
+    margin-bottom: 20.5vh;
   }
+  .fa-3x{
+    width: 10%;
+  }
+  .display-productos{
+
+    margin-left: -5px;
+  }
+  .fondoIndex{
+    height: 100vh;
+  }
+  header>.logo{
+    padding: 5vh 0 5vh 0;
+  }
+  .type{
+    width: 70%;
+    margin-top: 10vh;
+    -webkit-clip-path: circle(50% at center);
+    filter:grayscale(0%);
+    opacity: 1;
+
+  }
+  .circulos{
+    width:40%;
+  }
+  .producto{
+    transform: translateY(-5px);
+    opacity: 1;
+    filter:sepia(0%);
+  }
+  .menu{
+
+    left:-100%;
+
+  }
+
 }
 

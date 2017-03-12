@@ -10,14 +10,14 @@ var products =
 {name:"Lash Paint Mascara", description:"Coat lashes in ultra-black, volumized color with just one stroke for thicker, sexier-looking lashes.", type:"eyes", brand:"tarte", price:23.00, rate:4.0, soldItems:454, img:"mascara2.jpg"},
 {name:"Shimmer Eyeshadow", description:"An innovative eyeshadow that delivers a lasting, high-pigment, velvety finish that lasts.", type:"eyes", brand:"Urban Decay", price:20.00, rate:4.8, soldItems:177, img:"eyeshadow2.jpg"},
 {name:"Tinted Brow Gel", description:"For those with thin, sparse brows, this unique, botanical formula gives the appearance of fuller, thicker brows.", type:"eyes", brand:"Anastasia", price:22.00, rate:4.0, soldItems:417, img:"browgel.jpg"},
-{name:"Velvet Lip Glide", description:"This highly-saturated lip color combines covetable comfort and confident shades in one smooth move.", type:"lips", brand:"NARS", price:26.00, rate:4.1, soldItems:452, img:"liquid2.jpg"},
 {name:"Tarteist Matte Lip Paint", description:"Create full-coverage, opaque lip looks with this lightweight, liquid-to-matte lip paint.", type:"lips", brand:"tarte", price:20.00, rate:3.5, soldItems:484, img:"paint.jpg"},
-{name:"Metallic Lip Gloss", description:"This ultra-smooth, weightless formula combines the intensity of a stain with the mirror-like shine of a gloss.", type:"lips", brand:"Anastasia", price:16.00, rate:4.6, soldItems:342, img:"gloss.jpg"},
-{name:"Moisturizing lip gloss", description:"NARS Lip Gloss assists with antiaging and lavishes lips in a full spectrum of shades. Nourishing ingredients moisturize, leaving lips smooth and soft.", type:"lips", brand:"NARS", price:26.00, rate:4.2, soldItems:236, img:"gloss2.jpg"},
 {name:"Audacious Lipstick", description:"A modern lipstick that dresses up lips with bold coverage and ultrasoft texture.", type:"lips", brand:"NARS", price:34.00, rate:4.6, soldItems:310, img:"lipstick.jpg"},
 {name:"Liquid Lipstick in Allison", description:"An ultra-saturated, liquid lipstick that delivers an intense shot of matte pigment and smear-resistant coverage.", type:"lips", brand:"Anastasia", price:20.00, rate:4.0, soldItems:296, img:"liquid.jpg"},
 {name:"Vice Lipstick Stockpile", description:"A fully loaded, limited-edition set with 30 creamy, addictive shades of Vice Lipstick.", type:"lips", brand:"Urban Decay", price:325.00, rate:4.5, soldItems:223, img:"lipstickkit.jpg"},
+{name:"Moisturizing lip gloss", description:"NARS Lip Gloss assists with antiaging and lavishes lips in a full spectrum of shades. Nourishing ingredients moisturize, leaving lips smooth and soft.", type:"lips", brand:"NARS", price:26.00, rate:4.2, soldItems:236, img:"gloss2.jpg"},
+{name:"Metallic Lip Gloss", description:"This ultra-smooth, weightless formula combines the intensity of a stain with the mirror-like shine of a gloss.", type:"lips", brand:"Anastasia", price:16.00, rate:4.6, soldItems:342, img:"gloss.jpg"},
 {name:"Velvet Matte Lip Pencil Duo", description:"Enriched with emollients, vitamin E, and silicone, each gorgeous shade glides on and stays put.", type:"lips", brand:"NARS", price:20.00, rate:4.1, soldItems:350, img:"lipcrayons.jpg"},
+{name:"Velvet Lip Glide", description:"This highly-saturated lip color combines covetable comfort and confident shades in one smooth move.", type:"lips", brand:"NARS", price:26.00, rate:4.1, soldItems:452, img:"liquid2.jpg"},
 {name:"Junkie Vice Lipstick Palette", description:"A limited-edition, super-creamy lip palette with 12 shades in a glamorous, gold-accented gunmetal case.", type:"lips", brand:"Urban Decay", price:25.00, rate:3.4, soldItems:300,img:"kit.jpg"},
 {name:"Naked Ultra Nourishing Lipgloss", description:"This super nourishing gloss has an addictively creamy texture and a gorgeous, high-shine finish.", type:"lips", brand:"Urban Decay", price:22.00, rate:4.5, soldItems:289, img:"gloss3.jpg"},
 {name:"All Day Luminous Foundation", description:"Get full-coverage, lightweight foundation coverage. This foundation is highly pigmented and leaves a natural-looking finish.", type:"face", brand:"NARS", price:49.00, rate:4.5, soldItems:253, img:"foundation.jpg"},
@@ -33,7 +33,14 @@ var products =
 ];
 
 exports.getAll=function () {
-    return products;
+var newProducts = products
+    function Shuffle(o) {
+        for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        return o;
+    };
+
+    Shuffle(newProducts);
+    return newProducts;
 };
 
 exports.getByType= function (type) {
@@ -71,7 +78,7 @@ exports.getByPrice= function (price) {
             }
         }
         if (price==21){
-            if(products[i].price > 20 && products.price < 40){
+            if(products[i].price >= 20 && products[i].price <= 40){
                 filtered.push(products[i]);
             }
         }
@@ -87,12 +94,12 @@ exports.getByPrice= function (price) {
 exports.getByRate= function (rate) {
     var filtered= [];
     for (i = 0; i < products.length; i++) {
-        if (rate=="over"){
+        if (rate==="over"){
             if(products[i].rate > 4.0){
                 filtered.push(products[i]);
             }
         }
-        if (rate=="under"){
+        if (rate==="under"){
             if(products[i].rate < 4.0){
                 filtered.push(products[i]);
             }
@@ -133,7 +140,7 @@ exports.getBySold= function (items) {
 exports.getImg= function(filtered){
     var rutas= [];
     for(i = 0; i < filtered.length; i++){
-        rutas.push("../images/products/"+filtered[i].type+"/"+filtered[i].img);
+        rutas.push('/images/products/'+filtered[i].type+'/'+filtered[i].img);
     }
     return rutas;
 };
