@@ -69,6 +69,7 @@ router.get('/selected', function (req, res, next) {
        var ruta = dbProducts.getImg(carrito);
        res.render('carrito', {products: carrito, rutas: ruta, title: 'Your Cart'});
    }else{
+       
        res.redirect('/products');
    }
 });
