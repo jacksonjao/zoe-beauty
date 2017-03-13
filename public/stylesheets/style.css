@@ -186,9 +186,19 @@ background: none;
   color: #be9c6a;
   z-index: 20;
   position: fixed;
-  margin: 35px 35px 0 0;
-  margin: 35px 0 0 35px;
 
+  margin: 3% 3% 0 3%;
+}
+
+.fa-shopping-cart{
+  color: #be9c6a;
+position: fixed;
+  z-index: 20;
+  margin: 3% 0% 0 94%;
+  float: right;
+}
+.fa-3x{
+  font-size: 3vw;
 }
 
 .details-product{
@@ -218,21 +228,21 @@ float: left;
   margin-left: 40px;
 
 }
-.name-product>div{
-
-}
 .name-product>div>h1{
   font-size: 30pt;
 }
 .precio{
   text-align: right;
 }
+
 .buy{
   text-align: left;
 }
 .buy:hover{
   color:black;
 }
+
+
 .lista-carrito{
   margin-left: 24.80%;
   transform: translateY(15vh);
@@ -249,9 +259,7 @@ float: left;
   border-image-slice: 1;
 
 }
-.elemento-carrito{
 
-}
 .carro-right{
 margin-left: 5%;
   margin-top: 10%;
@@ -273,6 +281,7 @@ display: flex;
   font-size: 12pt;
   text-align: left;
 }
+
 /* Responsive design */
 
 
@@ -343,6 +352,115 @@ width: 100%;
   }
   .menu{
     left:-100%;
+  }
+
+
+
+
+
+
+
+  .details-product{
+    transform: translateY(25vh);
+    text-align: center;
+    margin-left:0 ;
+width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .description{
+    color: black;
+    font-size: 16pt;
+    text-align: center;
+
+  }
+  .detail-image{
+text-align: center;
+  }
+  .detail-image>img{
+    margin-left: -10px;
+    border: 10px solid;
+    border-style: inset;
+    border-image: linear-gradient(to bottom, #533a1f 0%, #ba8a4d 100%);
+    border-image-slice: 1;
+  }
+  .name-product{
+    float: left;
+    margin-left: 0;
+
+  }
+  .name-product>div>h1{
+    font-size: 30pt;
+  }
+  .precio{
+    text-align: center;
+  }
+
+  .buy{
+    text-align: center;
+    margin-bottom: 15vh;
+  }
+  .buy:hover{
+    color:black;
+  }
+
+
+
+
+  .lista-carrito{
+    margin-left: 0;
+    transform: translateY(35vh);
+  }
+  .carrito-figure{
+    width: 100%;
+    text-align: center;
+  }
+
+  .carrito-img{
+    width: 60%;
+    margin: 10% ;
+    border: 5px solid;
+    border-style: inset;
+    border-image: linear-gradient(to bottom, #533a1f 0%, #ba8a4d 100%);
+    border-image-slice: 1;
+
+  }
+
+  .carro-right{
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 0;
+
+  }
+  .carro-left{
+    margin: auto;
+    width: 90%;
+    padding: 0;
+  }
+  .alinear-pinche-carrito{
+    display: flex;
+    margin: 0 0 3vh 0;
+  }
+
+  .carro-right>h1{
+    font-size: 22pt;
+  }
+  .texto-carrito{
+    color: black;
+    font-size: 12pt;
+    text-align: left;
+  }
+
+
+  .fa-3x{
+    font-size: 8vw;
+  }
+
+  .fa-shopping-cart{
+
+    margin: 3% 0% 0 88%;
+
   }
 
 }

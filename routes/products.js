@@ -50,16 +50,17 @@ router.get('/sold/:items', function (req, res, next) {
 router.get('/details/:name', function (req, res, next) {
     var producto = dbProducts.getByName(req.params.name);
     var ruta= "/images/products/"+producto.type+"/"+producto.img+"";
-    res.render('details', {product: producto, img : ruta,carrito: "Buy", title: "Zoe Beauty: "+req.params.name});
+    res.render('details', {product: producto, img : ruta,carrito: "Add to cart", title: "Zoe Beauty: "+req.params.name});
 });
 
 router.get('/selected/:name', function (req, res, next) {
 
     var producto = dbProducts.getByName(req.params.name);
     carrito.push(producto);
-    var ruta= "/images/products/"+producto.type+"/"+producto.img+"";
+    res.redirect('/products');
+/*    var ruta= "/images/products/"+producto.type+"/"+producto.img+"";
     res.render('details', {product: producto, img : ruta,carrito: "Added to cart", title: "Zoe Beauty: "+req.params.name});
-console.log("El carrito tiene "+carrito.length+"productos");
+console.log("El carrito tiene "+carrito.length+"productos");*/
 });
 
 router.get('/selected', function (req, res, next) {
@@ -69,7 +70,6 @@ router.get('/selected', function (req, res, next) {
        res.render('carrito', {products: carrito, rutas: ruta, title: 'Your Cart'});
    }else{
        res.redirect('/products');
-
    }
 });
 
