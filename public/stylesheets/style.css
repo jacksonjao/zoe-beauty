@@ -49,7 +49,7 @@ p{
 p:hover{
   color: #be9c6a;
 }
-a>h1:hover{
+.view-all>h1:hover{
   color: white;
 }
 .menu>ul{
@@ -230,7 +230,41 @@ float: left;
 .buy{
   text-align: left;
 }
+.buy:hover{
+  color:black;
+}
+.lista-carrito{
+  margin-left: 24.80%;
+  transform: translateY(15vh);
+  z-index: 0;
+  margin-bottom: 11vh;
+}
+.carrito-img{
+  width: 80%;
+  margin: 10% ;
+  border: 10px solid;
+  border-style: inset;
+  border-image: linear-gradient(to bottom, #533a1f 0%, #ba8a4d 100%);
+  border-image-slice: 1;
 
+}
+.elemento-carrito{
+  display: inline-block;
+}
+.carro-right{
+
+}
+.carro-left{
+
+}
+.carro-right>h1{
+  font-size: 22pt;
+}
+.texto-carrito{
+  color: black;
+  font-size: 12pt;
+  text-align: left;
+}
 /* Responsive design */
 
 
@@ -300,9 +334,7 @@ width: 100%;
     filter:sepia(0%);
   }
   .menu{
-
     left:-100%;
-
   }
 
 }

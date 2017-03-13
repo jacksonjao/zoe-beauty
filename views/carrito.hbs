@@ -1,11 +1,17 @@
 <header><figure class="logo col-12"><a href="/"><img src="/images/logo.png" alt="" class=" col-2"></a></figure></header>
 <div class="col-12 list">
 
-    <section class="lista-carrito  col-10">
+    <section class="lista-carrito  col-6">
         <ul>
 
-            <li class="elemento-carrito">{{#each rutas}}
-                <figure class="display-productos col-divi-5"><a href="/products/details/{{name}}"><img class="producto" src={{dir}} alt=""></a></figure>
+            <li class="elemento-carrito col-12">{{#each rutas}}
+                <div class="carro-left col-4">
+                <figure class="carrito-figure"><img class="carrito-img" src={{dir}} alt=""></figure></div>
+                <div class="carro-right col-8">
+                    <h1>{{name}}</h1>
+                    <h2 class="texto-carrito">{{description}}</h2><br>
+                    <h2 class="texto-carrito">Price: ${{price}}</h2>
+                </div>
             {{/each}}</li>
         </ul>
     </section>

@@ -62,4 +62,13 @@ router.get('/selected/:name', function (req, res, next) {
 console.log("El carrito tiene "+carrito.length+"productos");
 });
 
+router.get('/selected', function (req, res, next) {
+    //res.send('respond with a resource');
+
+    var ruta = dbProducts.getImg(carrito);
+
+    res.render('carrito', {products: carrito, rutas: ruta, title: 'Your Cart'});
+
+});
+
 module.exports = router;

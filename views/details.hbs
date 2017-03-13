@@ -1,22 +1,25 @@
-<header><figure class="logo col-12"><a href="/"><img src="/images/logo.png" alt="" class=" col-2"></a></figure></header>
+<header>
+    <figure class="logo col-12"><a href="/"><img src="/images/logo.png" alt="" class=" col-2"></a></figure>
+</header>
 <section class="details-product col-10">
 
     <figure class="detail-image col-4"><img class="col-12" src={{img}} alt=""></figure>
 
-<div class="name-product col-4">
+    <div class="name-product col-4">
 
-    <div>
-        <h1>{{product.brand}}</h1>
-<h1>{{{product.name}}}</h1><br><br>
+        <div>
+            <h1>{{product.brand}}</h1>
+            <h1>{{{product.name}}}</h1><br><br>
 
-<h2 class="description">{{product.description}}</h2><br><br>
+            <h2 class="description">{{product.description}}</h2><br><br>
 
- <h2 class="description">Rate: {{product.rate}}/5</h2>
-    <h2 class="description">Sold Items: {{product.soldItems}}</h2> <br><br>
-        <h1 class="precio">${{{product.price}}}</h1>
-        <a href="/products/selected/{{product.name}}"><h1 class="buy">${{{carrito}}}</h1></a>
+            <h2 class="description">Rate: {{product.rate}}/5</h2>
+            <h2 class="description">Sold Items: {{product.soldItems}}</h2> <br><br>
+            <h1 class="precio">${{{product.price}}}</h1>
+            <a href="/products/selected/{{product.name}}" ><h1 class="buy"> {{{carrito}}}</h1></a>
+
+        </div>
     </div>
-</div>
 
 </section>
 
