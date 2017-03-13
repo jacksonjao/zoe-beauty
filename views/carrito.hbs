@@ -5,12 +5,15 @@
         <ul>
 
             <li class="elemento-carrito col-12">{{#each rutas}}
+                <div class="alinear-pinche-carrito">
                 <div class="carro-left col-4">
                 <figure class="carrito-figure"><img class="carrito-img" src={{dir}} alt=""></figure></div>
                 <div class="carro-right col-8">
                     <h1>{{name}}</h1>
                     <h2 class="texto-carrito">{{description}}</h2><br>
                     <h2 class="texto-carrito">Price: ${{price}}</h2>
+                </div>
+
                 </div>
             {{/each}}</li>
         </ul>

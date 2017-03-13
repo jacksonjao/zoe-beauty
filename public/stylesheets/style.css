@@ -238,6 +238,7 @@ float: left;
   transform: translateY(15vh);
   z-index: 0;
   margin-bottom: 11vh;
+
 }
 .carrito-img{
   width: 80%;
@@ -249,14 +250,21 @@ float: left;
 
 }
 .elemento-carrito{
-  display: inline-block;
+
 }
 .carro-right{
+margin-left: 5%;
+  margin-top: 10%;
 
 }
 .carro-left{
 
 }
+
+.alinear-pinche-carrito{
+display: flex;
+}
+
 .carro-right>h1{
   font-size: 22pt;
 }
